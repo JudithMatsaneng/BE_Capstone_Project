@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import DailyStat, WeeklyGoal, FriendRequest, SharedWeeklySummary
 from django.contrib.auth.models import User
+from .models import Friendship
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -67,4 +68,11 @@ class SharedWeeklySummarySerializer(serializers.ModelSerializer):
             except User.DoesNotExist:
                 continue
         return s
+    
+class FriendshipSerializer(serializers.ModelSerializer):
+    friend_username = serializers.CharField(source='friend.username', read_only=True)
+    
+    class Meta:
+        model = Friendship
+        fields = ['id', 'friend', 'friend_username', 'can_view_summary']
 

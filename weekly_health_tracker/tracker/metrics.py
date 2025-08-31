@@ -1,5 +1,4 @@
 #Tracker App
-# tracker/metrics.py
 from datetime import timedelta
 from django.utils import timezone
 from .models import DailyStat, Goal
@@ -46,4 +45,6 @@ def get_weekly_summary(user, start_date=None, end_date=None):
         }
 
     return summary
+
+
 

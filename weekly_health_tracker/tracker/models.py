@@ -68,3 +68,11 @@ class SharedWeeklySummary(models.Model):
     def __str__(self):
         return f"{self.owner.username} shared week {self.week_start}"
 
+class Friendship(models.Model):
+    user = models.ForeignKey(User, related_name='friendships', on_delete=models.CASCADE)
+    friend = models.ForeignKey(User, related_name='friends_of', on_delete=models.CASCADE)
+    can_view_summary = models.BooleanField(default=True)  # permission flag
+
+    class Meta:
+        unique_together = ('user', 'friend')
+
