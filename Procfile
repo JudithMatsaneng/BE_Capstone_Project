@@ -1,1 +1,2 @@
 web: gunicorn weekly_health_tracker.wsgi:application --bind 0.0.0.0:$PORT
+web: gunicorn weekly_health_tracker.weekly_health_tracker.wsgi:application --log-file -
