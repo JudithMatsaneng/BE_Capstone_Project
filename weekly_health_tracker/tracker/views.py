@@ -141,6 +141,12 @@ class FriendWeeklySummaryView(APIView):
             "average_calories": avg_calories
         })
 
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("Hello Render!")
+
+
 
 
 

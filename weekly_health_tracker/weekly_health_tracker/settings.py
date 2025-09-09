@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'weekly_health_tracker.urls'
+ROOT_URLCONF = "weekly_health_tracker.urls"
 
 TEMPLATES = [
     {
